@@ -1,0 +1,4 @@
+<view 
+  class="container" 
+  style="padding-top: {{ padding }}px;">
+</view>
