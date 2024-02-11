@@ -3,12 +3,14 @@
   "version": "1.0.0-alpha.1",
   "description": "小程序日历工具包",
   "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./types/index.d.ts",
   "files": [
-    "dist/"
+    "dist/",
+    "types/",
+    "global.d.ts"
   ],
   "scripts": {
-    "build": "cross-env NODE_ENV=production rollup -c --bundleConfigAsCjs",
+    "build": "cross-env NODE_ENV=production rollup -c --bundleConfigAsCjs && tsc --declaration --declarationDir types --emitDeclarationOnly",
     "dev": "cross-env NODE_ENV=develop node ./scripts/dev.js",
     "package": "node ./scripts/publish.js",
     "test": "echo \"Error: no test specified\" && exit 1"

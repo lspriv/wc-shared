@@ -3,13 +3,10 @@ const path = require('path');
 const { watch } = require('rollup');
 const { loadConfigFile } = require('rollup/loadConfigFile');
 const { cli, now } = require('./utils');
-const ora = require('ora');
 
 require('colors');
 
 const STDIO_IGNORE = { stdio: 'ignore' };
-
-const spinner = ora();
 
 let Flag = false;
 let currTime = 0;
@@ -20,11 +17,9 @@ let currTime = 0;
     throw new Error('please login to the devTools');
   }
 
-  spinner.start('loading rollup config');
   const { options, warnings } = await loadConfigFile(path.resolve(process.cwd(), 'rollup.config.js'), {
     bundleConfigAsCjs: true
   });
-  spinner.succeed('rollup configuration loaded');
 
   warnings.count && warnings.flush();
 
