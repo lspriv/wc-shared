@@ -4,7 +4,7 @@
  * See File LICENSE for detail or copy at https://opensource.org/licenses/MIT
  * @Description: Description
  * @Author: lspriv
- * @LastEditTime: 2024-02-11 09:57:26
+ * @LastEditTime: 2024-02-11 19:42:06
  */
 // import path from 'path';
 import commonjs from '@rollup/plugin-commonjs';
@@ -72,9 +72,11 @@ export default {
           directives: false
         },
         mangle: {
+          module: true,
           toplevel: true
         },
         output: {
+          ecma: '2015',
           comments: /^!/
         }
       }),
