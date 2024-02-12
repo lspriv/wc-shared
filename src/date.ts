@@ -4,7 +4,7 @@
  * See File LICENSE for detail or copy at https://opensource.org/licenses/MIT
  * @Description: 日期计算
  * @Author: lspriv
- * @LastEditTime: 2024-02-12 08:32:20
+ * @LastEditTime: 2024-02-12 09:06:10
  */
 import { isDate, isNumber, isString } from './shared';
 export interface CalendarDay {
@@ -45,11 +45,9 @@ export const isSameDate = (d1: CalendarDay, d2: CalendarDay) => {
  * 是否今日
  * @param date
  */
-export const isToday = (date: CalendarDay) => isSameDate(date, Today || date);
+export const isToday = (date: CalendarDay) => isSameDate(date, Today);
 
-export function normalDate(fuzzy: string | number | Date | CalendarDay): CalendarDay;
-export function normalDate(year: number, month: number, day: number): CalendarDay;
-export function normalDate(
+function normalDateBase(
   fuzzy: string | number | Date | CalendarDay,
   month?: number,
   day?: number
@@ -68,8 +66,19 @@ export function normalDate(
   const m = date.getMonth() + 1;
   const d = date.getDate();
   const w = date.getDay();
-  const today = isToday({ year: y, month: m, day: d });
-  return { year: y, month: m, day: d, week: w, today };
+  return { year: y, month: m, day: d, week: w };
+}
+
+export function normalDate(fuzzy: string | number | Date | CalendarDay): CalendarDay;
+export function normalDate(year: number, month: number, day: number): CalendarDay;
+export function normalDate(
+  fuzzy: string | number | Date | CalendarDay,
+  month?: number,
+  day?: number
+): CalendarDay | null {
+  const date = normalDateBase(fuzzy, month, day);
+  if (date) date.today = isToday(date);
+  return date;
 }
 
 /**
@@ -133,4 +142,11 @@ export const monthDiff = (start: CalendarMonth, end: CalendarMonth) => {
   return yearDiff * 12 + end.month - start.month;
 };
 
-export const Today = normalDate(new Date());
+/**
+ * 今日
+ */
+export const Today = (() => {
+  const date = normalDateBase(new Date)!;
+  date.today = true;
+  return date;
+})();
