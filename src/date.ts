@@ -4,7 +4,7 @@
  * See File LICENSE for detail or copy at https://opensource.org/licenses/MIT
  * @Description: 日期计算
  * @Author: lspriv
- * @LastEditTime: 2024-02-12 00:49:11
+ * @LastEditTime: 2024-02-12 08:32:20
  */
 import { isDate, isNumber, isString } from './shared';
 export interface CalendarDay {
@@ -25,8 +25,6 @@ export type CalendarYear = number;
 export const WEEKS = '日一二三四五六';
 
 export const GREGORIAN_MONTH_DAYS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
-export const Today = normalDate(new Date());
 
 /**
  * 获取某个月份的天数
@@ -134,3 +132,5 @@ export const monthDiff = (start: CalendarMonth, end: CalendarMonth) => {
   const yearDiff = end.year - start.year;
   return yearDiff * 12 + end.month - start.month;
 };
+
+export const Today = normalDate(new Date());
