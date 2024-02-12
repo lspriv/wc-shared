@@ -1,0 +1,58 @@
+{
+  "name": "@lspriv/wc-shared",
+  "version": "1.0.0-alpha.8",
+  "description": "小程序日历工具包",
+  "main": "./dist/index.js",
+  "types": "./types/index.d.ts",
+  "files": [
+    "dist/",
+    "types/",
+    "global.d.ts"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production rollup -c --bundleConfigAsCjs && tsc --declaration --declarationDir types --emitDeclarationOnly",
+    "dev": "cross-env NODE_ENV=develop node ./scripts/dev.js",
+    "package": "node ./scripts/publish.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "calendar",
+    "miniprogram",
+    "tools",
+    "日历",
+    "工具包",
+    "小程序"
+  ],
+  "author": "lspriv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lspriv/wc-shared/issues"
+  },
+  "homepage": "https://github.com/lspriv/wc-shared#readme",
+  "devDependencies": {
+    "@inquirer/prompts": "^3.3.2",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/eslint": "^8.56.2",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "colors": "^1.4.0",
+    "commander": "^12.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "miniprogram-api-typings": "^3.12.2",
+    "ora": "^5.4.1",
+    "prettier": "^3.2.5",
+    "rollup": "^4.9.6",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "rollup-plugin-filesize": "^10.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
+  }
+}
