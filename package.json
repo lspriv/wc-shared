@@ -6,8 +6,7 @@
   "types": "./types/index.d.ts",
   "files": [
     "dist/",
-    "types/",
-    "global.d.ts"
+    "types/"
   ],
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c --bundleConfigAsCjs && tsc --declaration --declarationDir types --emitDeclarationOnly",
@@ -30,6 +29,7 @@
   },
   "homepage": "https://github.com/lspriv/wc-shared#readme",
   "devDependencies": {
+    "@lspriv/wx-calendar": "^1.5.9-alpha.4",
     "@inquirer/prompts": "^3.3.2",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
