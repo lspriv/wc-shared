@@ -4,7 +4,7 @@
  * See File LICENSE for detail or copy at https://opensource.org/licenses/MIT
  * @Description: 微信工具
  * @Author: lspriv
- * @LastEditTime: 2024-02-18 08:07:26
+ * @LastEditTime: 2024-02-18 08:24:18
  */
 import { Voidable } from './shared';
 
@@ -31,7 +31,7 @@ type WxApiPromisyOpts<T extends WxApiPromisifable> = Omit<Parameters<T>[0], 'suc
 
 type WxApiPromisyReturn<T extends WxApiPromisifable, F = WxApiSuccess<T>> = F extends (...args: any[]) => any
   ? Parameters<F>[0]
-  : void;
+  : never;
 
 export const wxPromisify = <T extends WxApiPromisifable>(
   wxapi: T,
