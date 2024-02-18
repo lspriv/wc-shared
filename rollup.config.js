@@ -4,7 +4,7 @@
  * See File LICENSE for detail or copy at https://opensource.org/licenses/MIT
  * @Description: Description
  * @Author: lspriv
- * @LastEditTime: 2024-02-11 19:42:06
+ * @LastEditTime: 2024-02-18 08:19:17
  */
 // import path from 'path';
 import commonjs from '@rollup/plugin-commonjs';
@@ -51,7 +51,7 @@ export default {
   },
   plugins: [
     clear({
-      targets: [DEV_OUTDIR, PRO_OUTDIR],
+      targets: [DEV_OUTDIR, PRO_OUTDIR, 'types'],
       silent: true
     }),
     resolve(),
