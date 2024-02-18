@@ -4,7 +4,7 @@
  * See File LICENSE for detail or copy at https://opensource.org/licenses/MIT
  * @Description: 微信工具
  * @Author: lspriv
- * @LastEditTime: 2024-02-18 10:00:01
+ * @LastEditTime: 2024-02-18 10:03:31
  */
 export type BoundingClientRects = Array<WechatMiniprogram.BoundingClientRectCallbackResult>;
 
@@ -27,8 +27,9 @@ type WxApiSuccess<T extends WxApiPromisifable> = Parameters<T>[0]['success'];
 
 type WxApiPromisifyOpts<T extends WxApiPromisifable> = Omit<Parameters<T>[0], 'success' | 'fail' | 'complete'>;
 
-type WxApiSuccessResult<T extends WxApiPromisifable> =
-  WxApiSuccess<T> extends (...args: any[]) => any ? Parameters<WxApiSuccess<T>>[0] : never;
+type WxApiSuccessResult<T extends WxApiPromisifable, F = WxApiSuccess<T>> = F extends (...args: any[]) => any
+  ? Parameters<F>[0]
+  : never;
 
 export const wxPromisify = <T extends WxApiPromisifable>(
   wxapi: T,
