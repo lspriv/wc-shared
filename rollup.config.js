@@ -4,7 +4,7 @@
  * See File LICENSE for detail or copy at https://opensource.org/licenses/MIT
  * @Description: Description
  * @Author: lspriv
- * @LastEditTime: 2024-02-18 08:19:17
+ * @LastEditTime: 2024-02-20 21:24:47
  */
 // import path from 'path';
 import commonjs from '@rollup/plugin-commonjs';
@@ -12,7 +12,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import clear from 'rollup-plugin-cleaner';
 import size from 'rollup-plugin-filesize';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import pkg from './package.json';
 
 import 'colors';
