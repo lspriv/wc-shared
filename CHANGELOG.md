@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/lspriv/wc-shared/compare/v1.0.0...v1.1.0) (2024-02-20)
+
+
+### Features
+
+* 新增接口 ([3c55293](https://github.com/lspriv/wc-shared/commit/3c552934dbe1e1e6b08dddda66bcc9bd757f087b))
+
+
+### Bug Fixes
+
+* 调整类型WxApiPromisyReturn ([2bc4e81](https://github.com/lspriv/wc-shared/commit/2bc4e81ad62c07dc581d4ea1a80af147184c427b))
+
 ## 1.0.0 (2024-02-12)
 
 
