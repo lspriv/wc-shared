@@ -12,7 +12,10 @@
         "emitDecoratorMetadata":true,
         "esModuleInterop": true,
         "skipLibCheck": true,
-        "importHelpers": true
+        "importHelpers": true,
+        "paths": {
+            "@lspriv/wx-calendar/*": ["./node_modules/@lspriv/wx-calendar/dist/*"]
+        }
     },
     "files": [
         "node_modules/miniprogram-api-typings/index.d.ts",
