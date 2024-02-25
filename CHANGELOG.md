@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/lspriv/wc-shared/compare/v1.1.0...v1.2.0) (2024-02-25)
+
+
+### Features
+
+* 新增日期格式化函数 ([85d3048](https://github.com/lspriv/wc-shared/commit/85d3048437bdd68006683ee0e70537f774f46f99))
+
+
+### Bug Fixes
+
+* 调整 ([987fe9b](https://github.com/lspriv/wc-shared/commit/987fe9b3587abc7a9ae26feaf4665a3a4eacea90))
+
 ## [1.1.0](https://github.com/lspriv/wc-shared/compare/v1.0.0...v1.1.0) (2024-02-20)
 
 
