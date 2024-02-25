@@ -1,6 +1,6 @@
 {
   "name": "@lspriv/wc-shared",
-  "version": "1.2.0-alpha.1",
+  "version": "1.2.0",
   "description": "小程序日历工具包",
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
